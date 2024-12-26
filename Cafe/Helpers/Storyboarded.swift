@@ -10,6 +10,7 @@ import UIKit
 
 enum Storyboard: String {
     case login = "LoginScreen"
+    case main = "MainScreen"
     
     var name: String {
         self.rawValue

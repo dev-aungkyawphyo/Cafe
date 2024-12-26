@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAb-Ww-G1f">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAb-Ww-G1f" customClass="CafeView" customModule="Cafe" customModuleProvider="target">
                                 <rect key="frame" x="20" y="213" width="353" height="426"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTc-tQ-2SO">
@@ -37,6 +37,9 @@
                                                 <state key="normal" title="Forgot Password?">
                                                     <color key="titleColor" name="PrimaryTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="forgotPasswordBtnAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="olr-1V-SVP"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dG-Z7-Fv5">
                                                 <rect key="frame" x="246" y="0.0" width="67" height="34"/>
@@ -45,6 +48,9 @@
                                                 <state key="normal" title="Register">
                                                     <color key="titleColor" name="PrimaryTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="registerBtnAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Mu1-dc-mVB"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -57,7 +63,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UTQ-zt-BLZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="313" height="55"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K3E-Jz-XKJ">
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K3E-Jz-XKJ" customClass="CafeTextField" customModule="Cafe" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="313" height="35"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="35" id="4IX-VE-GRP"/>
@@ -102,7 +108,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hFz-0w-s4f">
                                                         <rect key="frame" x="0.0" y="0.0" width="313" height="55"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H3g-AR-96U">
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H3g-AR-96U" customClass="CafeTextField" customModule="Cafe" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="313" height="35"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="35" id="5Ng-ip-zxK"/>
@@ -143,7 +149,7 @@
                                             </view>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybL-gV-P1g">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybL-gV-P1g" customClass="CafeButton" customModule="Cafe" customModuleProvider="target">
                                         <rect key="frame" x="129.66666666666666" y="324" width="93.666666666666657" height="45"/>
                                         <color key="backgroundColor" name="PrimaryColor"/>
                                         <constraints>
@@ -159,6 +165,9 @@
                                                 <real key="value" value="22"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginBtnAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hgi-1O-RpW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -188,6 +197,16 @@
                             <constraint firstItem="PAb-Ww-G1f" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="20" id="zbF-6M-aFc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordErrorLabel" destination="ORU-CO-BHq" id="e4d-iX-Kl4"/>
+                        <outlet property="passwordTextField" destination="H3g-AR-96U" id="2e7-gv-oN4"/>
+                        <outlet property="usernameErrorLabel" destination="Nqo-x0-T6B" id="Dvl-HL-WRG"/>
+                        <outlet property="usernameTextField" destination="K3E-Jz-XKJ" id="brD-yQ-xyi"/>
+                        <outletCollection property="errorLabelCollection" destination="Nqo-x0-T6B" collectionClass="NSMutableArray" id="3yL-dL-4tE"/>
+                        <outletCollection property="errorLabelCollection" destination="ORU-CO-BHq" collectionClass="NSMutableArray" id="eYc-HE-ZoC"/>
+                        <outletCollection property="textFieldCollection" destination="K3E-Jz-XKJ" collectionClass="NSMutableArray" id="QDL-Le-CWi"/>
+                        <outletCollection property="textFieldCollection" destination="H3g-AR-96U" collectionClass="NSMutableArray" id="viW-DN-9tX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
